@@ -4,3 +4,7 @@ scikit-learn
 xgboost
 streamlit
 openpyxl
+streamlit
+pandas
+numpy
+scikit-learn  <-- This is the most common culprit for pickle errors
