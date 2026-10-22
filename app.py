@@ -155,7 +155,15 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ---------- LOAD MODEL ----------
-model = pickle.load(open('return_prediction_model.pkl', 'rb'))
+import os
+import pickle
+
+# Get the directory where app.py is located
+current_dir = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(current_dir, 'return_prediction_model.pkl')
+
+with open(model_path, 'rb') as f:
+    model = pickle.load(f)
 scaler = pickle.load(open('scaler.pkl', 'rb'))
 
 # ---------- LOAD ENCODERS ----------
